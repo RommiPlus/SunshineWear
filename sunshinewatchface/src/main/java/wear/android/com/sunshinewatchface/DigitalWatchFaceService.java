@@ -190,8 +190,6 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
                 DigitalWatchFaceUtil.COLOR_VALUE_DEFAULT_AND_AMBIENT_HOUR_DIGITS;
         int mInteractiveMinuteDigitsColor =
                 DigitalWatchFaceUtil.COLOR_VALUE_DEFAULT_AND_AMBIENT_MINUTE_DIGITS;
-        int mInteractiveSecondDigitsColor =
-                DigitalWatchFaceUtil.COLOR_VALUE_DEFAULT_AND_AMBIENT_SECOND_DIGITS;
 
         /**
          * Whether the display supports fewer bits for each color in ambient mode. When true, we
@@ -437,21 +435,6 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
             if (!isInAmbientMode() && paint != null) {
                 paint.setColor(interactiveColor);
             }
-        }
-
-        private void setInteractiveBackgroundColor(int color) {
-            mInteractiveBackgroundColor = color;
-            updatePaintIfInteractive(mBackgroundPaint, color);
-        }
-
-        private void setInteractiveHourDigitsColor(int color) {
-            mInteractiveHourDigitsColor = color;
-            updatePaintIfInteractive(mHourPaint, color);
-        }
-
-        private void setInteractiveMinuteDigitsColor(int color) {
-            mInteractiveMinuteDigitsColor = color;
-            updatePaintIfInteractive(mMinutePaint, color);
         }
 
         private String formatTwoDigitNumber(int hour) {
